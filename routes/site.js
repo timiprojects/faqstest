@@ -4,6 +4,9 @@ const School = require('../models/model')
 
 //GET ALL TRACKED DATA
 router.get('/:name', (req, res) => {
+    req.headers["content-type"] == 'application/json'
+    req.headers["access-control-allow-origin"] == '*'
+    
     School.findOne({
         name: req.params.name
     }, (err, schools) => {
